@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://ct4ht530o7lfd"]
+[gd_scene load_steps=36 format=3 uid="uid://ct4ht530o7lfd"]
 
 [ext_resource type="Environment" uid="uid://bqnqgflivjvue" path="res://scenes/main-environment.tres" id="1_n2tpq"]
 [ext_resource type="PackedScene" uid="uid://dl2ed4gkybggf" path="res://objects/player.tscn" id="2_aedks"]
@@ -24,7 +24,12 @@
 [ext_resource type="FontFile" uid="uid://d0cxd77jybrcn" path="res://fonts/lilita_one_regular.ttf" id="22_qt51g"]
 [ext_resource type="Theme" uid="uid://d3avl0mr4r87l" path="res://themes/default_theme.tres" id="23_gixra"]
 [ext_resource type="Texture2D" uid="uid://dm50aa4qogm65" path="res://sprites/button_rectangle_depth_gloss.png" id="24_8vxrd"]
-[ext_resource type="PackedScene" path="res://objects/wall.tscn" id="25_pk87g"]
+[ext_resource type="PackedScene" uid="uid://dbr3dh46cbskt" path="res://objects/wall.tscn" id="25_pk87g"]
+[ext_resource type="PackedScene" uid="uid://bm5i3y2463cwm" path="res://models/prototyping/models/column-triangle-low.glb" id="26_vh74w"]
+[ext_resource type="PackedScene" uid="uid://7lmuj1b4d41i" path="res://models/prototyping/models/column-rounded-low.glb" id="27_kbpxm"]
+[ext_resource type="PackedScene" uid="uid://dmequtx2oso1f" path="res://models/props/rocks.glb" id="28_5ggy7"]
+[ext_resource type="PackedScene" uid="uid://cd18n6rywv8cc" path="res://objects/stone_big.tscn" id="29_5jqwy"]
+[ext_resource type="PackedScene" uid="uid://daolxhia820qk" path="res://objects/rocks.tscn" id="30_xt8tv"]
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_u8ojw"]
 auto_exposure_scale = 0.75
@@ -78,6 +83,9 @@ current = true
 fov = 40.0
 
 [node name="World" type="Node3D" parent="."]
+
+[node name="StaticBody3D" parent="World" instance=ExtResource("30_xt8tv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.22672, 1.58858, 6.39874)
 
 [node name="platform-moving" parent="World" instance=ExtResource("4_mpkxa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
@@ -191,6 +199,36 @@ transform = Transform3D(1.56209, -1.37982, 1.71508, 1.97375, 1.80907, -0.342241,
 
 [node name="cube14" parent="World" instance=ExtResource("18_cmsbv")]
 transform = Transform3D(1.56209, -1.37982, 1.71508, 1.97375, 1.80907, -0.342241, -0.974547, 1.4522, 2.05595, -15.866, 2.03819, 7.83702)
+
+[node name="Rocks" parent="World" instance=ExtResource("30_xt8tv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.394241, 1.54456, 7.33233)
+
+[node name="Rocks2" parent="World" instance=ExtResource("30_xt8tv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.99011, 1.45134, 3.19365)
+
+[node name="Rocks3" parent="World" instance=ExtResource("30_xt8tv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.76251, 1.45134, 4.54605)
+
+[node name="wall" parent="World" instance=ExtResource("25_pk87g")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -30.5423, 1.53448, 0.622322)
+
+[node name="wall2" parent="World" instance=ExtResource("25_pk87g")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -30.5423, 2.65714, -3.41335)
+
+[node name="column-triangle-low2" parent="World" instance=ExtResource("26_vh74w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.43004, 0, 4.9174)
+
+[node name="column-rounded-low2" parent="World" instance=ExtResource("27_kbpxm")]
+transform = Transform3D(10.745, 0, 0, 0, 10.745, 0, 0, 0, 10.745, 7.48541, 0, 3.04244)
+
+[node name="rocks2" parent="World" instance=ExtResource("28_5ggy7")]
+transform = Transform3D(7.08888, 0.125841, 0, -0.125841, 7.08888, 0, 0, 0, 7.09, 4.35858, 1.25489, 6.8392)
+
+[node name="rocks3" parent="World" instance=ExtResource("28_5ggy7")]
+transform = Transform3D(8.28869, 0.360927, 0, -0.14714, 20.3318, 0, 0, 0, 8.29, 4.35858, 1.25489, 4.06973)
+
+[node name="column-rounded-low3" parent="World" instance=ExtResource("29_5jqwy")]
+transform = Transform3D(-12.7833, 0, 0.209519, 0, 12.785, 0, -0.209519, 0, -12.7833, 7.73902, 0.0490637, 5.68669)
 
 [node name="Sun" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.422618, -0.694272, 0.582563, 0, 0.642788, 0.766044, -0.906308, 0.323744, -0.271654, 0, 0, 0)
@@ -307,12 +345,6 @@ text = "TIME"
 label_settings = SubResource("LabelSettings_v6r7m")
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="wall" parent="." instance=ExtResource("25_pk87g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -30.5423, 2.65714, 0.622322)
-
-[node name="wall2" parent="." instance=ExtResource("25_pk87g")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -30.5423, 2.65714, -3.41335)
 
 [connection signal="coin_collected" from="Player" to="HUD" method="_on_coin_collected"]
 [connection signal="reached_goal" from="Player" to="HUD" method="_on_player_reached_goal"]

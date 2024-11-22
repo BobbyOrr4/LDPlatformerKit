@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://cd18n6rywv8cc"]
+
+[ext_resource type="PackedScene" uid="uid://7lmuj1b4d41i" path="res://models/prototyping/models/column-rounded-low.glb" id="1_5gbb3"]
+[ext_resource type="Texture2D" uid="uid://0odt7cvj574e" path="res://models/core_models/Textures/colormap.png" id="2_qoafw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vga8l"]
+albedo_texture = ExtResource("2_qoafw")
+uv1_scale = Vector3(0.455, 1, 1)
+
+[node name="column-rounded-low2" instance=ExtResource("1_5gbb3")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="0"]
+
+[node name="column-rounded-low" parent="." index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_vga8l")
