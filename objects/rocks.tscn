@@ -1,16 +1,30 @@
-[gd_scene load_steps=3 format=3 uid="uid://daolxhia820qk"]
+[gd_scene load_steps=5 format=3 uid="uid://daolxhia820qk"]
 
 [ext_resource type="PackedScene" uid="uid://dmequtx2oso1f" path="res://models/props/rocks.glb" id="1_mnwij"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_a13gf"]
-size = Vector3(1, 1, 0.3573)
+size = Vector3(0.330414, 0.451233, 0.286957)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_odtao"]
+size = Vector3(0.599731, 0.799927, 0.831085)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1uji0"]
+size = Vector3(0.590698, 1.26617, 0.799438)
 
 [node name="Rocks" type="Node3D"]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.32135)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.132187, 0.172943, -0.0838673)
 shape = SubResource("BoxShape3D_a13gf")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(0.405, 0, 0, 0, 0.405, 0, 0, 0, 0.465, -0.185613, -0.0405148, 0.0954982)
+shape = SubResource("BoxShape3D_odtao")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(0.405, 0, 0, 0, 0.405, 0, 0, 0, 0.405, 0.112156, 0.0133855, 0.113468)
+shape = SubResource("BoxShape3D_1uji0")
 
 [node name="rocks2" parent="." instance=ExtResource("1_mnwij")]
