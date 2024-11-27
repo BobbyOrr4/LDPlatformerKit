@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://tb2bj144um0q"]
+
+[ext_resource type="PackedScene" uid="uid://stool4f0t663" path="res://models/prototyping/models/shape-hexagon-half.glb" id="1_d4qak"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cb2py"]
+size = Vector3(0.446405, 0.972192, 1.03302)
+
+[node name="shape-hexagon-half2" instance=ExtResource("1_d4qak")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000277869, 0.51628, -0.0144977)
+shape = SubResource("BoxShape3D_cb2py")

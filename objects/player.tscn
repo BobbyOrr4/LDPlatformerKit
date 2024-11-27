@@ -63,7 +63,7 @@ emission_sphere_radius = 0.2
 particle_flag_align_y = true
 direction = Vector3(0, 0, 0)
 gravity = Vector3(0, 0.1, 0)
-scale_amount_min = 0.75
+scale_amount_min = 0.0
 scale_amount_curve = SubResource("Curve_xh1e2")
 
 [node name="SoundFootsteps" type="AudioStreamPlayer" parent="."]

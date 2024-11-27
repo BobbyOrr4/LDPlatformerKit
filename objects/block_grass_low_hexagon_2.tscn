@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://vqmhfmrojdks"]
+
+[ext_resource type="PackedScene" uid="uid://v7114fdp2q8g" path="res://models/props/block-grass-low-hexagon.glb" id="1_sro3k"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_f57pa"]
+height = 0.593803
+radius = 0.562565
+
+[node name="block-grass-low-hexagon2" instance=ExtResource("1_sro3k")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.210966, 0)
+shape = SubResource("CylinderShape3D_f57pa")

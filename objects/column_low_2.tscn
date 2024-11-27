@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://b1vtw4awqi1sf"]
+
+[ext_resource type="PackedScene" uid="uid://bcelcc2hak4kr" path="res://models/prototyping/models/column-low.glb" id="1_duk57"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cb2py"]
+size = Vector3(0.198218, 0.513524, 0.208473)
+
+[node name="column-low2" instance=ExtResource("1_duk57")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0044612, 0.242943, 0.0026737)
+shape = SubResource("BoxShape3D_cb2py")
