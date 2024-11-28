@@ -26,7 +26,6 @@
 [ext_resource type="Texture2D" uid="uid://dm50aa4qogm65" path="res://sprites/button_rectangle_depth_gloss.png" id="24_8vxrd"]
 [ext_resource type="PackedScene" uid="uid://dbr3dh46cbskt" path="res://objects/wall.tscn" id="25_pk87g"]
 [ext_resource type="PackedScene" uid="uid://bm5i3y2463cwm" path="res://models/prototyping/models/column-triangle-low.glb" id="26_vh74w"]
-[ext_resource type="ArrayMesh" uid="uid://bqvmj2vm61rxr" path="res://vfx_meshes/fire.res" id="28_or31k"]
 [ext_resource type="PackedScene" uid="uid://cd18n6rywv8cc" path="res://objects/stone_big.tscn" id="29_5jqwy"]
 [ext_resource type="PackedScene" uid="uid://cmkdwrjcbf2o1" path="res://models/props/arrow.glb" id="30_ukwvk"]
 [ext_resource type="PackedScene" uid="uid://c0845looyday0" path="res://models/props/block-grass-overhang-narrow.glb" id="30_wi6fo"]
@@ -34,6 +33,7 @@
 [ext_resource type="PackedScene" uid="uid://bdhtqi8hyj50a" path="res://objects/block_grass_overhang_low_2.tscn" id="31_8jqv1"]
 [ext_resource type="PackedScene" uid="uid://c7hy2pdegt3xq" path="res://objects/column_triangle_2.tscn" id="32_wjxp3"]
 [ext_resource type="PackedScene" uid="uid://b1vtw4awqi1sf" path="res://objects/column_low_2.tscn" id="33_0a7u8"]
+[ext_resource type="PackedScene" uid="uid://dl5uj3mlxaew6" path="res://vfx_meshes/fire_vfx.tscn" id="34_0glpo"]
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_u8ojw"]
 auto_exposure_scale = 0.75
@@ -229,13 +229,16 @@ transform = Transform3D(0.919271, 0, 12.7833, 0, 25.77, 0, -56.0875, 0, 0.209517
 transform = Transform3D(0.919271, 0, 12.7833, 0, 25.77, 0, -56.0875, 0, 0.209517, 9.03943, 0.11938, 18.6361)
 
 [node name="column-rounded-low4" parent="World" instance=ExtResource("29_5jqwy")]
-transform = Transform3D(-88.5131, 8.22899e-07, 0.209517, -1.45073, -1.11859e-06, -12.7833, -2.78181e-06, -25.6, 5.653e-07, -0.535756, 0.0490637, 10.4047)
+transform = Transform3D(-54.6656, -20.1342, 0.376049, -1.45073, -1.01857e-06, -37.15, 69.615, -15.8105, -0.478885, 16.4178, 4.8861, 1.47311)
 
 [node name="column-rounded-low8" parent="World" instance=ExtResource("29_5jqwy")]
 transform = Transform3D(-88.5131, 8.22899e-07, 0.209517, -1.45073, -1.11859e-06, -12.7833, -2.78181e-06, -25.6, 5.653e-07, -18.216, -0.232096, 10.4047)
 
 [node name="column-rounded-low9" parent="World" instance=ExtResource("29_5jqwy")]
 transform = Transform3D(-88.5131, 8.22899e-07, 0.209517, -1.45073, -1.11859e-06, -12.7833, -2.78181e-06, -25.6, 5.653e-07, -0.535756, 0.0490637, 23.2204)
+
+[node name="column-rounded-low24" parent="World" instance=ExtResource("29_5jqwy")]
+transform = Transform3D(-88.5131, 8.22899e-07, 0.209517, -1.45073, -1.11859e-06, -12.7833, -2.78181e-06, -25.6, 5.653e-07, -0.535756, 0.0490637, 10.4469)
 
 [node name="column-rounded-low10" parent="World" instance=ExtResource("29_5jqwy")]
 transform = Transform3D(-88.5131, 8.22899e-07, 0.209517, -1.45073, -1.11859e-06, -12.7833, -2.78181e-06, -25.6, 5.653e-07, -18.216, -0.232096, 23.2204)
@@ -247,22 +250,22 @@ transform = Transform3D(-88.5131, 8.22899e-07, 0.209517, -1.45073, -1.11859e-06,
 transform = Transform3D(6.1, 0, 0, 0, 6.1, 0, 0, 0, 6.1, -2.52549, 1.35566, 6.11392)
 
 [node name="Rocks2" parent="World" instance=ExtResource("30_xt8tv")]
-transform = Transform3D(4.67677, 0, -4.45566, 0, 18.31, 0, 3.91635, 0, 5.32078, 4.22019, 1.35566, 1.54604)
+transform = Transform3D(4.67677, 0, -4.45566, 0, 18.31, 0, 3.91635, 0, 5.32078, 1.94567, 1.35566, 3.32545)
 
 [node name="Rocks3" parent="World" instance=ExtResource("30_xt8tv")]
-transform = Transform3D(6.0249, 0, 1.08566, 0, 18.31, 0, -0.95425, 0, 6.85456, 6.16694, 1.09036, 3.43622)
+transform = Transform3D(6.0249, 0, 1.08566, 0, 18.31, 0, -0.95425, 0, 6.85456, 3.89242, 1.09036, 5.21563)
 
 [node name="Rocks6" parent="World" instance=ExtResource("30_xt8tv")]
-transform = Transform3D(-6.06658, 0, 0.725428, 0, 14.6, 0, -0.637624, 0, -6.90198, 6.41838, 1.09937, 3.24483)
+transform = Transform3D(-6.06658, 0, 0.725428, 0, 14.6, 0, -0.637624, 0, -6.90198, 4.23021, 1.09937, 5.02213)
 
 [node name="Rocks7" parent="World" instance=ExtResource("30_xt8tv")]
-transform = Transform3D(6.06658, 0, -0.725428, 0, 16.955, 0, 0.637624, 0, 6.90198, 6.44931, 0.845017, 5.09207)
+transform = Transform3D(6.06658, 0, -0.725428, 0, 16.955, 0, 0.637624, 0, 6.90198, 4.17479, 0.845017, 6.87148)
 
 [node name="Rocks4" parent="World" instance=ExtResource("30_xt8tv")]
-transform = Transform3D(6.0249, 0, 1.08566, 0, 9.015, 0, -0.95425, 0, 6.85456, 2.4083, 1.09036, 3.28524)
+transform = Transform3D(6.0249, 0, 1.08566, 0, 9.015, 0, -0.95425, 0, 6.85456, 0.133776, 1.09036, 5.06465)
 
 [node name="Rocks5" parent="World" instance=ExtResource("30_xt8tv")]
-transform = Transform3D(6.0249, 0, 1.08566, 0, 9.015, 0, -0.95425, 0, 6.85456, 5.0379, 1.09036, 4.80026)
+transform = Transform3D(6.0249, 0, 1.08566, 0, 9.015, 0, -0.95425, 0, 6.85456, 2.76338, 1.09036, 6.57967)
 
 [node name="platform-moving2" parent="World" instance=ExtResource("4_mpkxa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.5575, 10.7556, 10.1954)
@@ -317,12 +320,6 @@ transform = Transform3D(-6.64632e-07, -4.73832e-07, 9.875, -15.205, -4.73831e-07
 
 [node name="column-low6" parent="World" instance=ExtResource("33_0a7u8")]
 transform = Transform3D(-2.73561, -1.33637e-06, 9.72257, -15.3887, -9.32956e-07, -1.72835, 6.83209e-07, -26.365, -4.3165e-07, -47.9506, 17.1647, 17.5973)
-
-[node name="Sun" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.422618, -0.694272, 0.582563, 0, 0.642788, 0.766044, -0.906308, 0.323744, -0.271654, 0, 0, 0)
-light_energy = 0.0
-shadow_enabled = true
-shadow_opacity = 0.75
 
 [node name="HUD" type="CanvasLayer" parent="." groups=["HUD"]]
 process_mode = 3
@@ -447,22 +444,6 @@ light_color = Color(1, 0.768627, 0, 1)
 light_energy = 3.909
 spot_range = 42.7472
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.3733, 11.4041, 7.38141)
-light_color = Color(0.977326, 0.827501, 0.417244, 1)
-light_energy = 1.808
-
-[node name="SpotLight3D" type="SpotLight3D" parent="OmniLight3D2"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -5.58811, 9.77608, 6.73573)
-light_color = Color(1, 0.768627, 0, 1)
-light_energy = 3.909
-spot_range = 42.7472
-
-[node name="Fire" type="MeshInstance3D" parent="."]
-process_mode = 3
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.41965, 1.42922, 2.24574)
-mesh = ExtResource("28_or31k")
-
 [node name="arrow2" parent="." instance=ExtResource("30_ukwvk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58.9102, 9.04955, 7.02854)
 
@@ -477,6 +458,104 @@ transform = Transform3D(25.81, 0, 0, 0, 7.48, 0, 0, 0, 22.835, -49.8523, 3.4698,
 
 [node name="column-low2" parent="." instance=ExtResource("33_0a7u8")]
 transform = Transform3D(11.205, 0, 0, 0, 11.205, 0, 0, 0, 22.43, -46.161, 5.37082, 20.3252)
+
+[node name="Fire_VFX" parent="." instance=ExtResource("34_0glpo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.75234, 4.71028, 0.780849)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Fire_VFX"]
+transform = Transform3D(0.2, 0, 0, 0, 0.236059, -0.157995, 0, 0.30414, 0.122628, 0.0561576, -0.20275, -0.311187)
+
+[node name="Fire_VFX11" parent="." instance=ExtResource("34_0glpo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.88069, 4.71028, 0.780849)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Fire_VFX11"]
+transform = Transform3D(0.2, 0, 0, 0, 0.236059, -0.157995, 0, 0.30414, 0.122628, 0.0561576, -0.20275, -0.311187)
+
+[node name="Fire_VFX12" parent="." instance=ExtResource("34_0glpo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.33496, 10.7938, 0.780849)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Fire_VFX12"]
+transform = Transform3D(0.2, 0, 0, 0, 0.236059, -0.157995, 0, 0.30414, 0.122628, 0.0561576, -0.20275, -0.311187)
+
+[node name="Fire_VFX13" parent="." instance=ExtResource("34_0glpo")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 7.47898, 10.7938, 2.82899)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Fire_VFX13"]
+transform = Transform3D(0.2, 0, 0, 0, 0.236059, -0.157995, 0, 0.30414, 0.122628, 0.0561576, -0.20275, -0.311187)
+
+[node name="Fire_VFX2" parent="." instance=ExtResource("34_0glpo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.20845, 4.71028, 0.780849)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Fire_VFX2"]
+transform = Transform3D(0.2, 0, 0, 0, 0.236059, -0.157995, 0, 0.30414, 0.122628, 0.0561576, -0.20275, -0.311187)
+
+[node name="Fire_VFX3" parent="." instance=ExtResource("34_0glpo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.7149, 4.71028, 0.780849)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Fire_VFX3"]
+transform = Transform3D(0.2, 0, 0, 0, 0.236059, -0.157995, 0, 0.30414, 0.122628, 0.0561576, -0.20275, -0.311187)
+
+[node name="Fire_VFX10" parent="." instance=ExtResource("34_0glpo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.4936, 4.71028, 0.780849)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Fire_VFX10"]
+transform = Transform3D(0.2, 0, 0, 0, 0.236059, -0.157995, 0, 0.30414, 0.122628, 0.0561576, -0.20275, -0.311187)
+
+[node name="Fire_VFX4" parent="." instance=ExtResource("34_0glpo")]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, -50.0787, 12.6144, 8.52986)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Fire_VFX4"]
+transform = Transform3D(0.2, 0, 0, 0, 0.272236, -0.141421, 0, 0.272236, 0.141421, -0.00479126, -0.622344, -0.638245)
+height = 4.60745
+
+[node name="Fire_VFX5" parent="." instance=ExtResource("34_0glpo")]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, -50.0787, 12.6144, 15.1116)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Fire_VFX5"]
+transform = Transform3D(0.2, 0, 0, 0, 0.272236, -0.141421, 0, 0.272236, 0.141421, -0.00479126, -0.622344, -0.638245)
+height = 4.60745
+
+[node name="Fire_VFX14" parent="." instance=ExtResource("34_0glpo")]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, -54.7557, 11.8912, 8.52986)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Fire_VFX14"]
+transform = Transform3D(0.2, 0, 0, 0, 0.272236, -0.141421, 0, 0.272236, 0.141421, -0.00479126, -0.622344, -0.638245)
+height = 4.60745
+
+[node name="Fire_VFX15" parent="." instance=ExtResource("34_0glpo")]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, -54.7557, 11.8912, 15.1116)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Fire_VFX15"]
+transform = Transform3D(0.2, 0, 0, 0, 0.272236, -0.141421, 0, 0.272236, 0.141421, -0.00479126, -0.622344, -0.638245)
+height = 4.60745
+
+[node name="Fire_VFX6" parent="." instance=ExtResource("34_0glpo")]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, -43.1408, 12.6144, 8.52986)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Fire_VFX6"]
+transform = Transform3D(0.2, 0, 0, 0, 0.272236, -0.141421, 0, 0.272236, 0.141421, -0.00479126, -0.622344, -0.638245)
+height = 4.60745
+
+[node name="Fire_VFX7" parent="." instance=ExtResource("34_0glpo")]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, -43.1408, 12.6144, 15.1116)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Fire_VFX7"]
+transform = Transform3D(0.2, 0, 0, 0, 0.272236, -0.141421, 0, 0.272236, 0.141421, -0.00479126, -0.622344, -0.638245)
+height = 4.60745
+
+[node name="Fire_VFX8" parent="." instance=ExtResource("34_0glpo")]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, -36.4812, 12.6144, 8.52986)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Fire_VFX8"]
+transform = Transform3D(0.2, 0, 0, 0, 0.272236, -0.141421, 0, 0.272236, 0.141421, -0.00479126, -0.622344, -0.638245)
+height = 4.60745
+
+[node name="Fire_VFX9" parent="." instance=ExtResource("34_0glpo")]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, -36.4812, 12.6144, 15.1116)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Fire_VFX9"]
+transform = Transform3D(0.2, 0, 0, 0, 0.272236, -0.141421, 0, 0.272236, 0.141421, -0.00479126, -0.622344, -0.638245)
+height = 4.60745
 
 [connection signal="coin_collected" from="Player" to="HUD" method="_on_coin_collected"]
 [connection signal="reached_goal" from="Player" to="HUD" method="_on_player_reached_goal"]
