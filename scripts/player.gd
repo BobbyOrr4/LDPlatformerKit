@@ -21,6 +21,7 @@ var jump_double = true
 
 var coins = 0
 var latest_checkpoint : Vector3
+var hasKey = false
 
 @onready var particles_trail = $ParticlesTrail
 @onready var sound_footsteps = $SoundFootsteps
@@ -164,4 +165,5 @@ func player_died() -> void:
 	
 func reached_checkpoint(checkpoint_pos : Vector3) -> void:
 	latest_checkpoint = checkpoint_pos
+	
 	

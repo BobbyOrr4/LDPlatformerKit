@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://ycg7d2lublaf"]
+
+[ext_resource type="PackedScene" uid="uid://bd8itfyp6bgw" path="res://models/prototyping/models/column.glb" id="1_ub48l"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yv3g5"]
+albedo_color = Color(1, 0.352941, 0, 1)
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+emission_energy_multiplier = 2.97
+
+[node name="Fire_Column" instance=ExtResource("1_ub48l")]
+transform = Transform3D(4, 0, 0, 0, 0.1, 0, 0, 0, 4, 0, 0, 0)
+
+[node name="column" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_yv3g5")

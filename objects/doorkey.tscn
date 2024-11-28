@@ -1,0 +1,71 @@
+[gd_scene load_steps=9 format=3 uid="uid://0eexwxc3h8k6"]
+
+[ext_resource type="PackedScene" uid="uid://ceddkgj3jcf3o" path="res://models/prototyping/models/column-rounded.glb" id="1_ioh7s"]
+[ext_resource type="Script" path="res://doorkey.gd" id="2_b2jcg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tp5nj"]
+albedo_color = Color(1, 0.509804, 0, 1)
+emission_enabled = true
+emission = Color(1, 0.509804, 0, 1)
+
+[sub_resource type="Animation" id="Animation_feoi0"]
+resource_name = "Open"
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("column-rounded")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0.0333333, 1, 0, 0.521713, -0.488388, 0.933333, 1, 0, 1.42698, -0.488388)
+
+[sub_resource type="Animation" id="Animation_uq5ld"]
+length = 0.001
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("column-rounded")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0.521713, -0.488388)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mw22y"]
+_data = {
+"Open": SubResource("Animation_feoi0"),
+"RESET": SubResource("Animation_uq5ld")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ip56g"]
+size = Vector3(0.512695, 0.817932, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g3nr0"]
+size = Vector3(0.106934, 0.901733, 1.00024)
+
+[node name="doorkey" instance=ExtResource("1_ioh7s")]
+script = ExtResource("2_b2jcg")
+
+[node name="column-rounded" parent="." index="0"]
+transform = Transform3D(0.34, 0, 0, 0, -4.37114e-08, -4.51, 0, 1, -1.97138e-07, 0, 0.521713, -0.488388)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="column-rounded" index="0"]
+transform = Transform3D(-0.194745, 1.96566e-09, 0.009971, -1.96566e-09, 0.195, -7.68336e-08, -0.009971, -7.68336e-08, -0.194745, -0.0958798, 0.499233, -7.45058e-09)
+material = SubResource("StandardMaterial3D_tp5nj")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
+libraries = {
+"": SubResource("AnimationLibrary_mw22y")
+}
+
+[node name="Area3D" type="Area3D" parent="." index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.243652, 0.441742, 0)
+shape = SubResource("BoxShape3D_ip56g")
+
+[node name="DoorBlocker" type="StaticBody3D" parent="." index="3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DoorBlocker" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0117188, 0.527161, 0.012085)
+shape = SubResource("BoxShape3D_g3nr0")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
