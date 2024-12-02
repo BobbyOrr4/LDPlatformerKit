@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://beseo2np0iijh"]
+
+[ext_resource type="PackedScene" uid="uid://2briludp3y6q" path="res://models/prototyping/models/wall.glb" id="1_gta4i"]
+
+[node name="Wall_4x4x4" instance=ExtResource("1_gta4i")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)

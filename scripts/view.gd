@@ -19,7 +19,7 @@ var zoom : float = 10.0
 var look_at_player : bool = true
 var secondary_target : Node
 
-@onready var camera = $Camera
+@onready var camera = $SpringArm3D/Camera
 
 func _ready():
 	camera_rotation = rotation_degrees # Initial rotation
