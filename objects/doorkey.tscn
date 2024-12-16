@@ -1,12 +1,15 @@
-[gd_scene load_steps=9 format=3 uid="uid://0eexwxc3h8k6"]
+[gd_scene load_steps=10 format=3 uid="uid://0eexwxc3h8k6"]
 
 [ext_resource type="PackedScene" uid="uid://ceddkgj3jcf3o" path="res://models/prototyping/models/column-rounded.glb" id="1_ioh7s"]
 [ext_resource type="Script" path="res://doorkey.gd" id="2_b2jcg"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t4d1h"]
+albedo_color = Color(0.45098, 0.12549, 0, 1)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tp5nj"]
-albedo_color = Color(1, 0.509804, 0, 1)
+albedo_color = Color(1, 0, 0, 1)
 emission_enabled = true
-emission = Color(1, 0.509804, 0, 1)
+emission = Color(1, 0, 0, 1)
 
 [sub_resource type="Animation" id="Animation_feoi0"]
 resource_name = "Open"
@@ -45,9 +48,10 @@ script = ExtResource("2_b2jcg")
 
 [node name="column-rounded" parent="." index="0"]
 transform = Transform3D(0.34, 0, 0, 0, -4.37114e-08, -4.51, 0, 1, -1.97138e-07, 0, 0.521713, -0.488388)
+surface_material_override/0 = SubResource("StandardMaterial3D_t4d1h")
 
 [node name="CSGSphere3D" type="CSGSphere3D" parent="column-rounded" index="0"]
-transform = Transform3D(-0.194745, 1.96566e-09, 0.009971, -1.96566e-09, 0.195, -7.68336e-08, -0.009971, -7.68336e-08, -0.194745, -0.0958798, 0.499233, -7.45058e-09)
+transform = Transform3D(0.0139297, 2.09538e-08, 0.00281179, -1.21937e-09, 0.195, -2.16668e-08, 0.000713203, -7.58612e-08, -0.0549174, -0.0958798, 0.499233, -7.45058e-09)
 material = SubResource("StandardMaterial3D_tp5nj")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
