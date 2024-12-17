@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://daolxhia820qk"]
+[gd_scene load_steps=6 format=3 uid="uid://daolxhia820qk"]
 
 [ext_resource type="PackedScene" uid="uid://dmequtx2oso1f" path="res://models/props/rocks.glb" id="1_mnwij"]
+[ext_resource type="PackedScene" uid="uid://dqe83pil81wbx" path="res://objects/dither_obstacle.tscn" id="2_bslhm"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_a13gf"]
 size = Vector3(0.330414, 0.451233, 0.286957)
@@ -28,3 +29,5 @@ transform = Transform3D(0.405, 0, 0, 0, 0.405, 0, 0, 0, 0.405, 0.112156, 0.01338
 shape = SubResource("BoxShape3D_1uji0")
 
 [node name="rocks2" parent="." instance=ExtResource("1_mnwij")]
+
+[node name="DitherObstacle" parent="." instance=ExtResource("2_bslhm")]
